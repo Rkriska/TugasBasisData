@@ -1,0 +1,75 @@
++---------+--------------------------------+----------------+-------------------+
+| kode_mk | nama_mk                        | kode_prasyarat | nama_prasyarat    |
++---------+--------------------------------+----------------+-------------------+
+| IK301   | Kecerdasan Buatan              | IK101          | Dasar Pemrograman |
+| IK302   | Data Mining                    | IK201          | Basis Data        |
+| IK303   | Komputasi Awan                 | IK201          | Basis Data        |
+| IK304   | Interaksi Manusia dan Komputer | NULL           | NULL              |
++---------+--------------------------------+----------------+-------------------+
++---------+--------------------------------+----------------+-------------------+
+| kode_mk | nama_mk                        | kode_prasyarat | nama_prasyarat    |
++---------+--------------------------------+----------------+-------------------+
+| IK301   | Kecerdasan Buatan              | IK101          | Dasar Pemrograman |
+| IK302   | Data Mining                    | IK201          | Basis Data        |
+| IK303   | Komputasi Awan                 | IK201          | Basis Data        |
+| IK304   | Interaksi Manusia dan Komputer | NULL           | NULL              |
++---------+--------------------------------+----------------+-------------------+
++---------+--------------------------------+
+| kode_mk | nama_mk                        |
++---------+--------------------------------+
+| IK301   | Kecerdasan Buatan              |
+| IK302   | Data Mining                    |
+| IK304   | Interaksi Manusia dan Komputer |
++---------+--------------------------------+
++---------+--------------------------------+
+| kode_mk | nama_mk                        |
++---------+--------------------------------+
+| IK301   | Kecerdasan Buatan              |
+| IK302   | Data Mining                    |
+| IK304   | Interaksi Manusia dan Komputer |
++---------+--------------------------------+
++---------+--------------------------------+------------------+-----------+
+| kode_mk | nama_mk                        | jumlah_mahasiswa | peringkat |
++---------+--------------------------------+------------------+-----------+
+| IK301   | Kecerdasan Buatan              |                4 |         1 |
+| IK302   | Data Mining                    |                4 |         1 |
+| IK303   | Komputasi Awan                 |                2 |         2 |
+| IK304   | Interaksi Manusia dan Komputer |                2 |         2 |
++---------+--------------------------------+------------------+-----------+
++---------+-------------------+------------------+
+| kode_mk | nama_mk           | jumlah_mahasiswa |
++---------+-------------------+------------------+
+| IK301   | Kecerdasan Buatan |                4 |
+| IK302   | Data Mining       |                4 |
+| IK303   | Komputasi Awan    |                2 |
++---------+-------------------+------------------+
++---------+----------------+------+
+| nim     | nama_mahasiswa | ips  |
++---------+----------------+------+
+| 23IK001 | Citra Lestari  | 3.63 |
+| 24IK001 | Aditya Pratama | 3.75 |
+| 24IK002 | Bella Maharani | 3.33 |
++---------+----------------+------+
++---------+----------------+------+
+| nim     | nama_mahasiswa | ips  |
++---------+----------------+------+
+| 23IK001 | Citra Lestari  | 3.63 |
+| 24IK001 | Aditya Pratama | 3.75 |
+| 24IK002 | Bella Maharani | 3.33 |
++---------+----------------+------+
++---------+----------------+------+
+| nim     | nama_mahasiswa | ipk  |
++---------+----------------+------+
+| 22IK001 | Damar Nugraha  | 3.58 |
+| 23IK001 | Citra Lestari  | 3.38 |
+| 24IK001 | Aditya Pratama | 3.75 |
+| 24IK002 | Bella Maharani | 3.33 |
++---------+----------------+------+
++---------+----------------+------+
+| nim     | nama_mahasiswa | ipk  |
++---------+----------------+------+
+| 22IK001 | Damar Nugraha  | 3.58 |
+| 23IK001 | Citra Lestari  | 3.38 |
+| 24IK001 | Aditya Pratama | 3.75 |
+| 24IK002 | Bella Maharani | 3.33 |
++---------+----------------+------+

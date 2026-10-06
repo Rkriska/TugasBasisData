@@ -1,0 +1,101 @@
+\documentclass[11pt,indonesia]{tugasMIPA}
+
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks = true,
+    citecolor  = {red},
+    linkcolor  = {blue}
+}
+
+\usepackage{pdflscape}
+\usepackage{fancybox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage[margin=1cm]{caption}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\renewcommand{\ttdefault}{cmtt}
+
+%DEFINISI TAMBAHAN
+\definecolor{sqlblue}{RGB}{0,90,160}
+\definecolor{sqlgreen}{RGB}{0,128,0}
+\definecolor{sqlgray}{RGB}{245,245,245}
+\definecolor{sqlcomment}{RGB}{120,120,120}
+\definecolor{sqlpurple}{RGB}{128,0,128}
+
+
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+\lstdefinestyle{sqlstyle}{
+    language=SQL,
+    backgroundcolor=\color{sqlgray},
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{sqlblue}\bfseries,
+    commentstyle=\color{sqlcomment}\itshape,
+    stringstyle=\color{sqlgreen},
+    numbers=none,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{gray!50},
+    tabsize=2,
+    captionpos=b,
+    morekeywords={PRIMARY, KEY, FOREIGN, REFERENCES, UNIQUE, CHECK, DEFAULT, AUTO_INCREMENT, SERIAL, CASCADE, RESTRICT, INNER, LEFT, RIGHT, FULL, OUTER, JOIN, ON, GROUP, ORDER, BY, HAVING, LIMIT, OFFSET, AS, DISTINCT, BETWEEN, LIKE, IN, IS, NULL, AND, OR, NOT, BEGIN, COMMIT, ROLLBACK, TRANSACTION, INDEX, VIEW, CONSTRAINT}
+}
+\lstset{style=sqlstyle}
+
+% ── Colors ───────────────────────────────────────────────────
+\definecolor{ugmblue}{RGB}{0, 56, 101}
+\definecolor{ugmgold}{RGB}{197, 155, 22}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{sectionblue}{RGB}{0, 80, 140}
+\definecolor{notegreen}{RGB}{34, 120, 60}
+\definecolor{warnorange}{RGB}{200, 90, 0}
+\newenvironment{simplebox}[1][]{%
+  \par\medskip\noindent
+  \if\relax\detokenize{#1}\relax\else\textbf{#1}\par\smallskip\fi
+  \begin{quote}\small
+}{\end{quote}\medskip}
+\newenvironment{infobox}[1]{\begin{simplebox}[#1]}{\end{simplebox}}
+\newenvironment{warnbox}[1]{\begin{simplebox}[#1]}{\end{simplebox}}
+\newenvironment{deliverablebox}[1][]{\begin{simplebox}[\if\relax\detokenize{#1}\relax Deliverables\else#1\fi]}{\end{simplebox}}
+\newenvironment{tcolorbox}[1][]{\begin{simplebox}[#1]}{\end{simplebox}}
+%Akhir DEFINISI Tambahan
+
+
+%------------------------------------------------
+% Awal Konten Utama Dokumen
+%------------------------------------------------
+\documenttype{Tugas Perkuliahan}
+\coursename{Basis Data}
+\instructor{Khabib Mustofa}
+
+\titleind{Model Data Relasional dan Querynya}
+\fullname{Kelompok Basis Data (Identitas Dummy)}
+\idnum{4 anggota; lihat daftar pada Bab II}
+\level{Sarjana} %appear in below part of the cover SARJANA/UNDERGRADUATE, MAGISTER/GRADUATE, or DOKTOR/POST GRADUATE
+\program{Ilmu Komputer} %appear in below part of the cover
+\yearsubmit{2026}
+
+\begin{document}
+%\input{coverTugas}
+%\titlepageeng
+\cover
+\tableofcontents
+\listoftables
+\listoffigures
+%\fontfamily{phv}\selectfont 
+\clearpage
+\pagenumbering{arabic}
+\input{petunjuktugas}
+\input{jawaban}
+\end{document}

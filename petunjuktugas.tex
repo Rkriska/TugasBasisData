@@ -1,0 +1,168 @@
+\chapter{Petunjuk dan Bentuk Penugasan}
+\begin{warnbox}{Integritas Akademik}
+\begin{center}
+  Seluruh karya yang dikumpulkan harus merupakan hasil pemikiran dan kerja
+  mahasiswa sendiri. Menyalin kode atau laporan dari sumber lain tanpa atribusi
+  yang jelas adalah pelanggaran integritas akademik dan akan dikenai tindakan sesuai
+  peraturan universitas.
+  \end{center}
+\end{warnbox}
+
+\section{Petunjuk Tugas}
+Tugas yang diberikan adalah menyangkut Model Relasional dan Query atas Model Relasional:
+\begin{itemize}
+    \itemsep0em
+     \item Aljabar Relasional
+     \item \textit{Structured Query Language (SQL})
+\end{itemize}
+
+Jawaban tugas dikemas dalam satu bab (bab 2), yang bagian-bagiannya telah disediakan dalam template ini. Isi Bab tersebut dapat dikembangkan sesuai kebutuhan, namun tidak untuk dikurangi.
+
+\begin{deliverablebox}{Tugas terdiri atas empat bagian}
+  \begin{enumerate}
+    \itemsep0em
+    \item menerjemahkan batasan dan proses bisnis ke dalam diagram ER (\textit{Entity Relationship Diagram}). Usulan disertai penjelasan proses pembentukan ERD
+     \item merancang dan mengusulkan skema basis data relasional yang sesuai dengan ERD yang diusulkan
+     \item Jika diberikan query, mengusulkan  representasi query dalam  ekspresi aljabar relasional
+     \item Mengusulkan penyelesaian pertanyaan dalam bentuk query SQL. Bila ada lebih dari satu kemungkinan query (dengan operasi atau klausa yang berbeda), query alternatif juga perlu dituliskan
+\end{enumerate}  
+\end{deliverablebox}
+
+\begin{infobox}{Ketentuan Tugas}
+\begin{enumerate}
+    \itemsep0em
+     \item Pekerjaan dapat dikerjakan secara berkelompok dengan anggota kelompok maksimal 4 orang.
+     \item Setiap anggota kelompok \textbf{harus} berkontribusi secara memadai, dan menguasai materi yang dihasilkan oleh kelompoknya.
+     \item Pekerjaan harus disajikan secara \textit{jelas, lengkap dan rapi, termasuk penggunaan bahasa formal yang mudah dipahami}
+     \item Pekerjaan harus dari pemikiran anggota tim, dan disepakati oleh semua anggota
+\end{enumerate}  
+\end{infobox}
+
+\section{Detail Isi Penugasan}
+\subsection{Domain Kasus}
+Diinginkan untuk mengelola data akademik suatu perguruan tinggi dengan batasan sebagai berikut:
+\begin{infobox}{Batasan Proses}
+    \begin{itemize}
+        \itemsep0em
+     \item Setiap kegiatan akademik perlu dicatat dengan transparan dan mempertahankan kronologi/historis
+     \item Desain penyimpanan data mengakomodasi hal-hal dan proses berikut:
+     \begin{itemize}
+         \itemsep0em \small
+         \item Seorang mahasiswa diperkenankan mengulang matakuliah tanpa batas berapa kali
+         \item Nilai matakuliah (apabila pernah mengulang) yang digunakan sebagai nilai untuk transkrip adalah \textbf{nilai pengambilan terakhir}
+         \item Matakuliah ada yang bersifat \textsc{Wajib} dan ada \textsc{Pilihan}.
+         \item Matakuliah dapat diprasyarati matakuliah lainnya
+          \item Seorang dosen dapat mengajar suatu matakuliah di suatu semester lebih di satu kelas (paralel)
+         \item Beberapa matakuliah dapat ditawarkan di semster genap ataupun semester ganjil
+         \item Suatu kelas untuk suatu matakuliah diajar penuh oleh seorang dosen (tidak secara team teching)
+         \item Nilai matakuliah dan bobot yang diberikan adalah adalah 
+         \begin{center}
+         \begin{multicols}{2}
+            \begin{tabular}{c|c}
+             Nilai & Bobot \\ \hline
+           A   & 4,00 \\
+            A-  & 3,75 \\
+            A/B & 3,50 \\
+            B+ & 3,25 \\
+            B & 3,00 \\ 
+            B-  & 2,75 \\
+         \end{tabular}  
+         \columnbreak
+         \begin{tabular}{c|c}
+             Nilai & Bobot \\ \hline
+            B/C  & 2,50 \\
+            C+ & 2,25 \\
+            C & 2 \\
+            C/D & 2,5 \\
+            D & 1,00 \\ 
+             D & 0,00 \\ 
+         \end{tabular} 
+         \end{multicols}
+         \end{center}
+         \item Rumus untuk menghitung IPK dari $n$ mata kuliah adalah:
+         \[IPK = \frac{\sum_{i=1}^{n}{{\text{sks}}_i.{\text{bobot}}_i}}{\sum_{i=1}^{n}{{\text{sks}}_i}}\]
+     \end{itemize}
+    \end{itemize}
+\end{infobox}
+
+\subsection{Output/Outcome Penugasan}
+Berikut adalah hal-hal minimal yang harus menjadi output/outcome penugasan.
+
+\begin{deliverablebox}
+    \begin{enumerate}
+        \itemsep0em
+     \item E-R diagram (ERD) yang sesuai hal-hal di atas! (dimulai dari identifikasi: entitas, relasi, kardinalitas, dsb.)
+     \item Skema lengkap tabel-tabel basis data yang sesuai ERD yang dibuat; misal dalam bentuk \newline \texttt{Mhs(nim, nama, jenisKelamin, prodi,\dots) \newline Dosen(nip, \dots)}
+     
+     Dan tulis juga \textbf{perintah DDL SQL untuk definisi tabel-tabel} di atas (lengkap dengan semua \textit{constraint})!
+     \item Perintah DML untuk pertanyaan-pertanyaan di bawah ini:
+     \begin{enumerate}
+         \itemsep0em \footnotesize
+         \item Daftar nama mata kuliah pilihan dan mata kuliah yang memprasyaratinya (cukup info nama dan kode matakuliah saja).  Matakuliah yang tidak memiliki prasyarat tetap ditampilkan!
+         \item Daftar Matakuliah pilihan yang diambil oleh mahasiswa Ilmu Komputer angkatan '2024' pada semester ganjil tahun akademik 2026/2027!
+         \item Daftar Matakuliah pilihan yang favorit untuk mahasiswa Ilmu Komputer, yaitu tiga matakuliah dengan pengambil terbanyak dalam tiga tahun terakhir!
+         \item Daftar mahasiswa yang memiliki Indeks Prestasi Semester ganjil tahun 2025/2026 tidak kurang dari 3,25! (pahami perbedaan antara IP Semester dan IP Kumulatif)
+         \item Daftar mahasiswa dan IP Kumulatif yang diperolehnya saat ini! (matakuliah yang pernah diulang cukup dihitung sekali) 
+     \end{enumerate}
+     \item Query dalam bentuk ekspresi aljabar relasional untuk setiap pertanyaan/query yang diberikan!
+    \end{enumerate}
+\end{deliverablebox}
+
+\vspace{.2cm}
+Untuk setiap query di atas, langkah pengerjaan perlu diuraikan:
+\begin{enumerate}
+    \itemsep0em
+     \item identifikasi tabel-tabel yang perlu dilibatkan
+     \item penentuan kriteria join dan jenis join: \textsc{inner join, natural join, left/right join} atau \textsc{outer join}
+     \item Perintah SQL yang valid. Apabila memerlukan \textsc{VIEW} sebagai temporary table, silahkan juga dituliskan secara runtut.
+     \item apabila ada lebih dari satu SQL query yang \textit{equivalent}, akan menjadi nilai tambah apabila Anda bisa menuliskan serta query tersebut!
+\end{enumerate}
+
+\section{Contoh Soal dan Pengerjaannya}
+Misal diberikan query:
+\begin{tcolorbox}{}
+  \begin{quote}
+    \textit{Tampilkan daftar mata kuliah pilihan yang belum pernah diambil/diikuti oleh mahasiswa}
+\end{quote}  
+\end{tcolorbox}
+maka contoh jawaban adalah sebagai berikut:
+\begin{infobox}{Query nomor 1}
+    \begin{enumerate}
+        \itemsep0em \small
+         \item \textbf{Tabel yang diperlukan dalam query:} \textsc{Matakuliah (Mk), PengambilanKuliah (Pk)}
+         \item bila dengan operasi SET DIFFERENCE tidak ada proses join, sehingga tidak ada kriteria join. Sebagai alternatif, dapat digunakan LEFT JOIN, dengan kriteria \texttt{Mk.idMatakuliah= Pk.idMatakuliah} 
+         \item \textbf{Query yang diperlukan} 
+         \begin{lstlisting}[caption= pendekatan SET DIFFERENCE]
+SELECT * FROM Matakuliah Mk WHERE (sifat='P') and idMatakuliah NOT IN 
+    (SELECT idMatakuliah FROM PengambilanKuliah Pk)       
+         \end{lstlisting}
+         \item Alternatif SQL yang ekuivalen
+         \begin{lstlisting}[caption=dengan LEFT JOIN]
+SELECT Mk.* FROM Matakuliah Mk LEFT JOIN PesertaKuliah Pk ON (Mk.idMatakuliah=Pk.idMatakuliah) 
+    WHERE Mk.sifat='P' and Pk.idMatakuliah is NULL
+         \end{lstlisting}
+      \begin{lstlisting}[caption=dengan EXISTS]
+SELECT * FROM Matakuliah Mk WHERE (sifat='P') and 
+    NOT EXISTS
+    (SELECT idMatakuliah FROM PengambilanKuliah Pk 
+        WHERE Pk.idMatakuliah=Mk.idMatakuliah)       
+         \end{lstlisting}  
+ \item Ekspresi Aljabar Relasional
+ {\large
+ \[
+\begin{array}{c}
+(\pi_{\text{idMatakuliah}}(\sigma_{\text{sifat='P'}}\left(\text{Matakuliah}) \right) - \\ \pi_{\text{idMatakuliah}}\left(\text{Matakuliah}\right))   \bowtie \text{Matakuliah}
+\end{array}
+ \]
+}
+{\large
+ \[
+ \begin{array}{c}
+DIFF1 \leftarrow \pi_{\text{idMatakuliah}}(\sigma_{\text{sifat='P'}}\left(\text{Matakuliah}) \right)\\
+ DIFF2 \leftarrow (DIFF1 - \pi_{\text{idMatakuliah}}\left(\text{Matakuliah}\right))  \\
+DIFF2 \bowtie \text{Matakuliah}
+ \end{array}
+ \]
+ }
+    \end{enumerate}
+\end{infobox}

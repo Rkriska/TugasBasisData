@@ -1,0 +1,82 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{../themeUGM/soaltugas}
+\usepackage[T1]{fontenc}
+\usepackage{tgbonum}
+\usepackage{hyperref}
+% Metadata
+\date{\today}
+\setmodule{Model Relasional dan Querynya}
+\setterm{Semester 1, 2026}
+
+%-------------------------------%
+% Other details
+% Metadata tugas
+%-------------------------------%
+\title{Tugas Kelompok: I}
+\setfacultyname{Fakultas MIPA}
+\setdeptname{S1 Ilmu Komputer}
+\setcoursename{Basis Data}
+
+%-------------------------------%
+% Add / Delete commands and packages
+% Paket tambahan dapat disesuaikan bila diperlukan
+%-------------------------------%
+\usepackage{amsmath,amssymb,bm}
+\newcommand{\tekskode}[1]{{\bf\large\texttt{#1}}}
+% Main document
+\begin{document}
+    % Add header
+    \header{}
+\fontfamily{qpl} \selectfont
+\begin{deliverablebox}{Tugas terdiri atas empat bagian}
+  \begin{enumerate}
+    \itemsep0em
+    \item menerjemahkan batasan dan proses bisnis ke dalam diagram ER (\textit{Entity Relationship Diagram}). Usulan disertai penjelasan proses pembentukan ERD
+     \item merancang dan mengusulkan skema basis data relasional yang sesuai dengan ERD yang diusulkan
+     \item Jika diberikan query, mengusulkan  representasi query dalam  ekspresi aljabar relasional
+     \item Mengusulkan penyelesaian pertanyaan dalam bentuk query SQL. Bila ada lebih dari satu kemungkinan query (dengan operasi atau klausa yang berbeda), query alternatif juga perlu dituliskan.
+\end{enumerate}  
+\end{deliverablebox}
+
+\begin{infobox}{Ketentuan Tugas}
+\begin{enumerate}
+    \itemsep0em
+     \item Pekerjaan dapat dikerjakan secara berkelompok dengan anggota kelompok \textbf{maksimal 4 orang}.
+     \item Setiap anggota kelompok \textbf{harus} berkontribusi secara memadai, dan menguasai materi yang dihasilkan oleh kelompoknya.
+     \item Pekerjaan harus disajikan secara \textit{jelas, lengkap dan rapi, termasuk penggunaan bahasa formal yang mudah dipahami}
+     \item Pekerjaan harus dari pemikiran anggota tim, dan disepakati oleh semua anggota
+\end{enumerate}  
+\end{infobox}
+\begin{warnbox}{Petunjuk Pengerjaan}
+\begin{enumerate}
+    \itemsep0em
+    \item Tugas dikerjakan dengan menggunakan pengolah teks \LaTeX dengan template yang diberikan terlampir pada penugasan ini
+    \item Cara penggunaan Template \LaTeX:
+    \begin{enumerate}
+    \itemsep0em
+     \item Template dapat dijalankan pada platform \textbf{offline} ataupun \textbf{online}.
+     \item Untuk platform offline, Anda dapat menggunakan \textit{tools}  Windows dengan \textbf{MikTeX}, Linux dengan \textbf{TeXLive} atau Mac dengan \textbf{MacTeX}
+     \item Untuk platfom online, Anda dapat menggunakan layanan 
+     \begin{itemize}
+         \item \href{https://www.overleaf.com/}{Overleaf}
+         \item \href{https://www.texpage.com/}{TexPage}
+     \end{itemize}
+     Caranya dengan membuat project baru, lalu memilih fitur \textbf{Existing Project} (pada Overleaf), atau \textbf{Upload Project} (pada Texpage)
+     \item Anda yang kelas IUP dapat melihat detail tugas dengan menjalankan/mengkompilasi file \tekskode{AssignmentTemplate.tex} yang ada pada folder \tekskode{IUP}. 
+     
+     Anda yang dari non IUP dapat mengkompilasi file \tekskode{TemplateTugas.tex} pada folder \tekskode{Non IUP}
+     \item Jawaban atas pertanyaan tugas \textbf{SEMUA} diletakkan pada file \tekskode{assignmentanswers.tex} (untuk IUP) atau \tekskode{jawaban.tex} (untuk non IUP)
+    \end{enumerate}
+     \item Pekerjaan dikumpulkan dalam bentuk file PDF hasil kompilasi kode LaTeX yang diberikan. Kode LaTeX (project dala format ZIP) juga dilampirkan.
+     \item Tugas dikumpulkan selambat-lambatnya tanggal 
+     \begin{tcolorbox}
+     \center
+     \tekskode{12 Oktober 2026 jam 11.00 WIB}    
+     \end{tcolorbox}
+     \textbf{Pengumpulan yang terlambat akan ditolak oleh sistem dan tidak difasilitasi pengumpulan tugas menggunakan platform lainnya (email, chat, WA, dsb.)}
+     \item SETIAP anggota kelompok perlu submit tugas secara individu (tidak hanya perwakilan kelompok).
+     \item Setiap pengumpulan tugas HARUS memuat identitas anggota kelompok secara lengkap dan jelas
+     \item Pengumpulan melalui Google Classroom harus disertai dengan menekan tombol \textbf{Submit} dan mendapatkan informasi pengiriman/feedback dari sistem.
+\end{enumerate}
+\end{warnbox}
+\end{document}

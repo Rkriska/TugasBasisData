@@ -1,0 +1,56 @@
+digraph ERD {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.65", ranksep="0.9", splines=ortho];
+  node [shape=plain, fontname="Arial"];
+  edge [fontname="Arial", fontsize=10, color="#4B5563", arrowsize=0.75];
+
+  prodi [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#003865">
+      <TR><TD BGCOLOR="#003865"><FONT COLOR="white"><B>program_studi</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> kode_prodi<BR ALIGN="LEFT"/>nama_prodi (UQ)</TD></TR>
+    </TABLE>>];
+  mahasiswa [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#003865">
+      <TR><TD BGCOLOR="#003865"><FONT COLOR="white"><B>mahasiswa</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> nim<BR ALIGN="LEFT"/>nama_mahasiswa<BR ALIGN="LEFT"/>tahun_masuk<BR ALIGN="LEFT"/><B>FK</B> kode_prodi</TD></TR>
+    </TABLE>>];
+  dosen [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#003865">
+      <TR><TD BGCOLOR="#003865"><FONT COLOR="white"><B>dosen</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> nidn<BR ALIGN="LEFT"/>nama_dosen</TD></TR>
+    </TABLE>>];
+  mk [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#003865">
+      <TR><TD BGCOLOR="#003865"><FONT COLOR="white"><B>mata_kuliah</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> kode_mk<BR ALIGN="LEFT"/>nama_mk<BR ALIGN="LEFT"/>sks<BR ALIGN="LEFT"/>sifat {W,P}<BR ALIGN="LEFT"/><B>FK</B> kode_prodi</TD></TR>
+    </TABLE>>];
+  prasyarat [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#9A6700">
+      <TR><TD BGCOLOR="#9A6700"><FONT COLOR="white"><B>prasyarat_mata_kuliah</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK,FK</B> kode_mk<BR ALIGN="LEFT"/><B>PK,FK</B> kode_mk_prasyarat</TD></TR>
+    </TABLE>>];
+  semester [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#003865">
+      <TR><TD BGCOLOR="#003865"><FONT COLOR="white"><B>semester_akademik</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id_semester<BR ALIGN="LEFT"/>tahun_mulai<BR ALIGN="LEFT"/>tahun_selesai<BR ALIGN="LEFT"/>jenis<BR ALIGN="LEFT"/>tanggal_mulai<BR ALIGN="LEFT"/>tanggal_selesai</TD></TR>
+    </TABLE>>];
+  kelas [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#1F6F43">
+      <TR><TD BGCOLOR="#1F6F43"><FONT COLOR="white"><B>kelas_kuliah</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id_kelas<BR ALIGN="LEFT"/><B>FK</B> kode_mk<BR ALIGN="LEFT"/><B>FK</B> id_semester<BR ALIGN="LEFT"/>kode_kelas<BR ALIGN="LEFT"/><B>FK</B> nidn<BR ALIGN="LEFT"/>kapasitas</TD></TR>
+    </TABLE>>];
+  ambil [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" COLOR="#1F6F43">
+      <TR><TD BGCOLOR="#1F6F43"><FONT COLOR="white"><B>pengambilan_kuliah</B></FONT></TD></TR>
+      <TR><TD ALIGN="LEFT"><B>PK</B> id_pengambilan<BR ALIGN="LEFT"/><B>FK</B> nim<BR ALIGN="LEFT"/><B>FK</B> id_kelas<BR ALIGN="LEFT"/>nilai_huruf<BR ALIGN="LEFT"/>bobot<BR ALIGN="LEFT"/>tanggal_input_nilai</TD></TR>
+    </TABLE>>];
+
+  prodi -> mahasiswa [label="1 : N"];
+  prodi -> mk [label="1 : N"];
+  mk -> kelas [label="1 : N"];
+  semester -> kelas [label="1 : N"];
+  dosen -> kelas [label="1 : N"];
+  mahasiswa -> ambil [label="1 : N"];
+  kelas -> ambil [label="1 : N"];
+  mk -> prasyarat [label="mata kuliah 1 : N"];
+  mk -> prasyarat [label="prasyarat 1 : N"];
+}
